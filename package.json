@@ -1,5 +1,6 @@
 {
   "name": "colour-searcher",
+  "homepage": "https://cazb67.github.io/colour-searcher",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
