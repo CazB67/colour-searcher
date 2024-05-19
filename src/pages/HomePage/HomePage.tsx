@@ -61,13 +61,14 @@ const HomePage = () => {
   };
 
   const sortColours = (colours: ColoursEntry[]) => {
-   const sort = allColours.sort((a, b) => {
+    const coloursCopy = [...allColours];
+   const sort = coloursCopy.sort((a, b) => {
         const hueA = parseInt(a.HSL.split(',')[0], 10);
         const hueB = parseInt(b.HSL.split(',')[0], 10);
         return hueA - hueB;
       });
-      const x = sort.findIndex((y) => y.color === colours[0].color); 
-      const result = findAndSurrounding(sort, x);
+      const selectedColourIndex = sort.findIndex((y) => y.color === colours[0].color); 
+      const result = findAndSurrounding(sort, selectedColourIndex);
       setSortedColours(result);
   }
 
@@ -125,7 +126,7 @@ const getSurroundingElements = (sortedArray: ColoursEntry[], index: number, coun
     if (sortedColours.length > 0) return sortedColours
     else return allColours
   }
-
+  
   return (
     <div className="fullHeight">
       <Header />
