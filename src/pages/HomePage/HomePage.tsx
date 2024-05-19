@@ -99,7 +99,7 @@ const getSurroundingElements = (sortedArray: ColoursEntry[], index: number, coun
 
         const rgbString = `${rgbObject.r}, ${rgbObject.g}, ${rgbObject.b}`;
         const hslObject = rgbToHsl(r, g, b);
-        const hslString = `${hslObject.h}, ${hslObject.s}, ${hslObject.l}`;
+        const hslString = `${hslObject.h}, ${hslObject.s}%, ${hslObject.l}%`;
 
         const colorWithRGBandHSL = { ...cur, RGB: rgbString, HSL: hslString };
         prev.push(colorWithRGBandHSL);
@@ -126,12 +126,12 @@ const getSurroundingElements = (sortedArray: ColoursEntry[], index: number, coun
     if (sortedColours.length > 0) return sortedColours
     else return allColours
   }
-  
+
   return (
     <div className="fullHeight">
       <Header />
       <main className="flexStart fullHeight flexColumn padding_2">
-        <div className="padding1_0">
+        <div className="padding1_0 flexStart flexColumn">
           <TitleComponent />
           <ColorInput handleEnter={findColour} isLoading={isLoading} value={inputValue} handleChange={handleChange} />
         </div>
