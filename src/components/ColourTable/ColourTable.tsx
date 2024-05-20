@@ -23,7 +23,7 @@ const ColourTable: FC<ColorTableProps> = ({ colours }) => {
             <tr key={item.color}>
               <td>
                 <div
-                className="borderRadius_6 iconSquare"
+                  className="borderRadius_6 iconSquare"
                   style={{ background: item.hex }}
                 ></div>
               </td>

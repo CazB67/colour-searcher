@@ -10,16 +10,32 @@ export type ColorInputProps = {
 
 const ColorInput: FC<ColorInputProps> = ({
   value,
-  handleChange = () => {},
-  handleEnter = () => {},
+  handleChange = () => { },
+  handleEnter = () => { },
   isLoading,
-  hexValue
+  hexValue,
 }) => {
+  return (
+    <div className="relative">
+      <input
+        value={value}
+        onKeyDown={handleEnter}
+        onChange={handleChange}
+        className="padding1 borderRadius_6 fullWidth relative"
+        placeholder="Enter Colour"
+        type="search"
+      />
+      {isLoading && <p className="italics">loading</p>}
+      <input
+        className={`${value.includes("#") || !value ? "absolute-input" : "displayNone"
+          }`}
+        type="color"
+        value={hexValue}
+        id="color-picker"
+        onChange={handleChange}
+      />
+    </div>
+  );
+};
 
-    return (
-     <div className="relative"><input value={value} onKeyDown={handleEnter} onChange={handleChange} className="padding1 borderRadius_6 fullWidth relative" placeholder="Enter Colour" type="search" />{isLoading && <p className="italics">loading</p>}<input className={`${value.includes('#') || !value ?'absolute-input' : 'displayNone'}`} type="color" value={hexValue} id="color-picker" onChange={handleChange} /></div>
-    );
-  };
-  
-  export default ColorInput;
-  
+export default ColorInput;
