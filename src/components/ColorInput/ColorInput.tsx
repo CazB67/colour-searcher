@@ -10,14 +10,15 @@ export type ColorInputProps = {
 
 const ColorInput: FC<ColorInputProps> = ({
   value,
-  handleChange = () => { },
-  handleEnter = () => { },
+  handleChange = () => {},
+  handleEnter = () => {},
   isLoading,
   hexValue,
 }) => {
   return (
     <div className="relative">
       <input
+        autoFocus
         value={value}
         onKeyDown={handleEnter}
         onChange={handleChange}
@@ -27,8 +28,9 @@ const ColorInput: FC<ColorInputProps> = ({
       />
       {isLoading && <p className="italics">loading</p>}
       <input
-        className={`${value.includes("#") || !value ? "absolute-input" : "displayNone"
-          }`}
+        className={`${
+          value.includes("#") || !value ? "absolute-input" : "displayNone"
+        }`}
         type="color"
         value={hexValue}
         id="color-picker"
