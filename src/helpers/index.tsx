@@ -54,7 +54,7 @@ export const isValidRGB = (input: string)=> {
 export const isValidHex = (input: string) => {
   const regex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
   const result = regex.exec(input);
-  if(result) return true;
+  if(result?.length) return true;
   else return false;
 }
 

@@ -76,31 +76,48 @@ const HomePage = () => {
   };
 
   const findClosestColor = () => {
-    let parsedColor: number[] = [];
+    const parsedColor = parseColor();
 
+    if (!parsedColor) return;
+
+    const closestColor = getClosestColor(parsedColor);
+
+    return sortColours([closestColor.closestColor]);
+  };
+
+  const parseColor = () => {
     if (inputValue.includes("#")) {
       if (isValidHex(inputValue)) {
         setIsInvalid(false);
-        parsedColor = hexToRgb(inputValue);
+        return hexToRgb(inputValue);
+      } else {
+        setIsInvalid(true);
+        return null;
       }
     } else if (inputValue.includes("rgb")) {
       if (isValidRGB(inputValue)) {
         setIsInvalid(false);
-        parsedColor = rgbStringToRgb(inputValue);
+        return rgbStringToRgb(inputValue);
+      } else {
+        setIsInvalid(true);
+        return null;
       }
     } else if (inputValue.includes("hsl")) {
       if (isValidHSL(inputValue)) {
         setIsInvalid(false);
-        parsedColor = hslStringToRgb(inputValue)
+        return hslStringToRgb(inputValue);
+      } else {
+        setIsInvalid(true);
+        return null;
       }
-    } else return setIsInvalid(true);
-
-    if (!parsedColor) {
+    } else {
       setIsInvalid(true);
       return null;
     }
+  };
 
-    const closestColors = allColours.reduce(
+  const getClosestColor = (parsedColor: number[]) => {
+    return allColours.reduce(
       (prev: any, cur: ColoursEntry) => {
         const colorRgb = rgbStringToRgb(cur.RGB);
 
@@ -115,7 +132,6 @@ const HomePage = () => {
       },
       { minDistance: Infinity, closestColor: null }
     );
-    return sortColours([closestColors.closestColor]);
   };
 
   const sortColours = (colours: ColoursEntry[]) => {
@@ -191,7 +207,7 @@ const HomePage = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
-    if (e.target.value.includes('#')) setHexValue(e.target.value)
+    if (e.target.value.includes("#")) setHexValue(e.target.value);
   };
 
   const switchHeader = () => {
