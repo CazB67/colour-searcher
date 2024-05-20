@@ -104,11 +104,13 @@
   position: absolute;
   min-width: unset;
   border: none;
-  width: 30px;
-  height: 30px;
-  right: -40px;
-  top: 12px;
+  width: 50px;
+  height: 40px;
+  right: -64px;
+  top: 6px;
   cursor: pointer;
+  outline: none;
+  border-radius: 6px;
 }
 
 .relative {
@@ -121,5 +123,9 @@
 
 .alignLeft {
   text-align: left;
+}
+
+.noOutline {
+  outline: none;
 }
 
