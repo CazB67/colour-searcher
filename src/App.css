@@ -100,12 +100,22 @@
 .absolute-input {
   position: absolute;
   min-width: unset;
+  border: none;
   width: 30px;
   height: 30px;
-  right: 12px;
-  top: 10px;
+  right: -40px;
+  top: 12px;
+  cursor: pointer;
 }
 
 .relative {
   position: relative;
+}
+
+.noMargin {
+  margin: 0;
+}
+
+.alignLeft {
+  text-align: left;
 }

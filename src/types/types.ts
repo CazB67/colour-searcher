@@ -3,4 +3,7 @@ export type ColoursEntry = {
     hex: string;
     RGB: string;
     HSL: string;
+    R: number;
+    G: number;
+    B: number;
   };
