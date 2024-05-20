@@ -1,4 +1,19 @@
-# Getting Started with Create React App
+# Colour Searcher
+
+This project is a single page website. It fetches colors from a JSON and displays them in a table. 
+
+## Description
+
+This project converts hex colour codes into RGB and HSL values. It also checks whether hex, RGB or HSL values are valid. For all valid colour codes a search of the JSON is done to find similar colours. The top 100 results are then displayed. The web page also uses a colour picker, should the user prefer.
+
+### Useful links
+- [Check Regex](https://regex101.com/)
+- [Check colour conversions](https://www.rapidtables.com/convert/color/index.html/)
+- [CSS Colour info](https://www.w3.org/wiki/CSS/Properties/color)
+- [Colour difference](https://en.wikipedia.org/wiki/Color_difference)
+- [Input colour picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
