@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/colour-searcher/static/css/main.1b0aa372.css",
-    "main.js": "/colour-searcher/static/js/main.cf025128.js",
+    "main.js": "/colour-searcher/static/js/main.66ccf929.js",
     "static/js/453.798a9bda.chunk.js": "/colour-searcher/static/js/453.798a9bda.chunk.js",
     "index.html": "/colour-searcher/index.html",
     "main.1b0aa372.css.map": "/colour-searcher/static/css/main.1b0aa372.css.map",
-    "main.cf025128.js.map": "/colour-searcher/static/js/main.cf025128.js.map",
+    "main.66ccf929.js.map": "/colour-searcher/static/js/main.66ccf929.js.map",
     "453.798a9bda.chunk.js.map": "/colour-searcher/static/js/453.798a9bda.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1b0aa372.css",
-    "static/js/main.cf025128.js"
+    "static/js/main.66ccf929.js"
   ]
 }
