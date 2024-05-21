@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useRef } from "react";
 
 export type ColorInputProps = {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -15,10 +15,31 @@ const ColorInput: FC<ColorInputProps> = ({
   isLoading,
   hexValue,
 }) => {
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    const colorPicker = document.querySelector("#color-picker");
+    if (colorPicker) {
+      colorPicker.addEventListener("change", setFocus, false);
+    }
+
+    // Cleanup function to remove the event listener
+    return () => {
+      if (colorPicker) {
+        colorPicker.removeEventListener("change", setFocus, false);
+      }
+    };
+  },[]);
+
+  const setFocus = () => {
+   if (inputRef.current) inputRef.current.focus()
+  }
+
   return (
     <div className="relative">
       <input
         autoFocus
+        ref={inputRef}
         value={value}
         onKeyDown={handleEnter}
         onChange={handleChange}
