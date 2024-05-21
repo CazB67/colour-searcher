@@ -44,7 +44,7 @@ const ColorInput: FC<ColorInputProps> = ({
         onKeyDown={handleEnter}
         onChange={handleChange}
         className="padding1 borderRadius_6 fullWidth relative noOutline"
-        style={{border: `1px solid ${hexValue}`}}
+        style={{border: `1px solid ${value.includes('#') ? hexValue : value}`}}
         placeholder="Enter Colour"
         type="search"
       />
