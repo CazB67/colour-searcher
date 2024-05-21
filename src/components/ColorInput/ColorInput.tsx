@@ -34,7 +34,6 @@ const ColorInput: FC<ColorInputProps> = ({
         }`}
         type="color"
         value={hexValue}
-        style={{border: `1px solid ${hexValue}`}}
         id="color-picker"
         onChange={handleChange}
       />

@@ -70,9 +70,6 @@
 
 .padding_2 {
   padding: 2rem;
-  @media (max-width:480px) {
-    padding: 1rem;
-  }
 }
 
 .padding1_0 {
@@ -105,12 +102,27 @@
   min-width: unset;
   border: none;
   width: 50px;
-  height: 40px;
-  right: -64px;
-  top: 6px;
+  height: 50px;
+  right: -56px;
+  top: 2px;
   cursor: pointer;
   outline: none;
   border-radius: 6px;
+  background-color: transparent;
+  &:hover {
+    width: 55px;
+    height: 55px;
+    top: 0
+  }
+}
+.absolute-input::-webkit-color-swatch {
+  border-radius: 6px;
+  border: none;
+}
+
+.absolute-input::-moz-color-swatch {
+  border-radius: 6px;
+  border: none;
 }
 
 .relative {
@@ -127,5 +139,11 @@
 
 .noOutline {
   outline: none;
+}
+
+.webOnly {
+  @media (max-width:480px) {
+    display: none;
+  }
 }
 

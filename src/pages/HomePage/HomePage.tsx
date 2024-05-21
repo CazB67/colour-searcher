@@ -226,7 +226,7 @@ const HomePage = () => {
   return (
     <div className="fullHeight">
       <Header />
-      <main className="flexStart fullHeight flexColumn padding_2">
+      <main className="flexStart fullHeight flexColumn padding1">
         <div className="flexStart flexColumn gap_6">
           <TitleComponent />
           <InfoComponent />
